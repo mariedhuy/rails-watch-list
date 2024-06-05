@@ -1,6 +1,14 @@
-<h1>Lists</h1>
-<% @lists.each do |list| %>
-  <%= link_to list.name, list_path(list) %>
-<% end  %>
+<div class="main-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.coze.fr/wp-content/uploads/2021/04/cinema-004-1035x690.jpg)">
+  Save any kind of movies
+</div>
+<h1>My Lists</h1>
+
+<div class="cards">
+  <% @lists.each do |list| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.image_url %>)">
+      <%= link_to list.name, list_path(list) %>
+    </div>
+  <% end  %>
+</div>
 
 <p><%= link_to "Add a new list", new_list_path %></p>
